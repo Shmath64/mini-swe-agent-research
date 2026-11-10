@@ -61,8 +61,13 @@ class RequestyModel:
 
     def __init__(self, **kwargs):
         self.config = RequestyModelConfig(**kwargs)
-        self._api_url = "https://router.requesty.ai/v1/chat/completions"
-        self._api_key = os.getenv("REQUESTY_API_KEY", "")
+        # Allow overriding API URL from environment or kwargs
+        self._api_url = os.getenv("OPENAI_API_URL", "https://router.requesty.ai/v1/chat/completions")
+        # Check if it's an environment variable override
+        if "api_url" in kwargs and kwargs["api_url"]:
+            self._api_url = kwargs["api_url"]
+        # Support API key from kwargs or environment
+        self._api_key = kwargs.get("api_key", os.getenv("REQUESTY_API_KEY", os.getenv("API_KEY", "")))
 
     def _query(self, messages: list[dict[str, str]], **kwargs):
         headers = {
@@ -85,7 +90,7 @@ class RequestyModel:
             return response.json()
         except requests.exceptions.HTTPError as e:
             if response.status_code == 401:
-                error_msg = "Authentication failed. You can permanently set your API key with `mini-extra config set REQUESTY_API_KEY YOUR_KEY`."
+                error_msg = "Authentication failed. You can permanently set your API key with `mini-extra config set REQUESTY_API_KEY YOUR_KEY` (or API_KEY for OpenAI-compatible APIs)."
                 raise RequestyAuthenticationError(error_msg) from e
             elif response.status_code == 429:
                 raise RequestyRateLimitError("Rate limit exceeded") from e

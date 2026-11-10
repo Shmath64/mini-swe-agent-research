@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 
 import requests
 
@@ -28,6 +29,9 @@ class OpenRouterTextbasedModel(OpenRouterModel):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.config = OpenRouterTextbasedModelConfig(**kwargs)
+        # Allow overriding API URL
+        if "api_url" in kwargs and kwargs["api_url"]:
+            self._api_url = kwargs["api_url"]
 
     def _query(self, messages: list[dict[str, str]], **kwargs):
         headers = {

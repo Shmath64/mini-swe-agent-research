@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import time
 
 import requests
@@ -39,7 +40,17 @@ class OpenRouterResponseModel(OpenRouterModel):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.config = OpenRouterResponseModelConfig(**kwargs)
-        self._api_url = "https://openrouter.ai/api/v1/responses"
+        # Default to OpenRouter Responses API URL, but allow override
+        self._api_url = os.getenv("OPENAI_API_URL", "https://openrouter.ai/api/v1/responses")
+        # Support Ollama and other OpenAI-compatible APIs
+        if "localhost" in self._api_url or "127.0.0.1" in self._api_url:
+            # For Ollama, we might need to use a different endpoint or handle differently
+            # Ollama's responses API is not standard, so we'll use chat completions for now
+            logger.warning(
+                "OpenRouterResponseModel is being used with a non-OpenRouter URL. "
+                "This may not work correctly with Ollama or other APIs. "
+                "Consider using OpenRouterModel instead for OpenAI-compatible APIs."
+            )
 
     def _query(self, messages: list[dict[str, str]], **kwargs):
         headers = {

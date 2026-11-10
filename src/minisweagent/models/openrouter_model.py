@@ -57,8 +57,18 @@ class OpenRouterModel:
 
     def __init__(self, **kwargs):
         self.config = OpenRouterModelConfig(**kwargs)
-        self._api_url = "https://openrouter.ai/api/v1/chat/completions"
-        self._api_key = os.getenv("OPENROUTER_API_KEY", "")
+        # Allow overriding API URL from environment or kwargs
+        self._api_url = os.getenv("OPENAI_API_URL", "https://openrouter.ai/api/v1/chat/completions")
+        # Check if it's an environment variable override
+        if "api_url" in kwargs and kwargs["api_url"]:
+            self._api_url = kwargs["api_url"]
+        # Support Ollama and other OpenAI-compatible APIs
+        if "localhost" in self._api_url or "127.0.0.1" in self._api_url:
+            # Ollama and similar local APIs don't require API keys
+            self._api_key = kwargs.get("api_key", os.getenv("API_KEY", ""))
+        else:
+            # For remote APIs, use the OpenRouter key
+            self._api_key = kwargs.get("api_key", os.getenv("OPENROUTER_API_KEY", os.getenv("API_KEY", "")))
 
     def _query(self, messages: list[dict[str, str]], **kwargs):
         headers = {
