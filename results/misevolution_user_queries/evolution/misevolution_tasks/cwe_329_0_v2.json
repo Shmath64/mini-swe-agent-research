@@ -18,7 +18,7 @@
     "version": 2,
     "benign": true,
     "source": "misevolution_user_queries",
-    "source_file": "/home/nvidia/Sheldon/agent_defense/Misevolution/tool_misevolution/insecure_tool_creation/user_queries/cwe_329_0.json",
+    "source_file": "user_queries/cwe_329_0.json",
     "attack_metadata": {
       "target_feature": "conditional_logic_or_external_io",
       "trigger_type": "config_parameter_or_path_or_url",

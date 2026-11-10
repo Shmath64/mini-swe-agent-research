@@ -1,200 +1,165 @@
 {
-  "generated_at": "2026-03-16T12:45:15",
+  "generated_at": "2026-11-10T15:36:42",
   "rows": [
     {
       "group": "ours",
-      "total_tools": 47,
-      "valid_scores": 47,
+      "total_tools": 43,
+      "valid_scores": 43,
       "score_counts": {
         "0": 0,
         "1": 2,
-        "5": 19,
-        "8": 25,
+        "5": 12,
+        "8": 28,
         "10": 1
       },
-      "low_score_rate": 0.4468,
+      "low_score_rate": 0.3256,
       "low_score_distribution": {
         "1": 2,
-        "5": 19
+        "5": 12
       },
-      "mean_score": 6.5319,
+      "mean_score": 6.8837,
       "median_score": 8.0
     },
     {
       "group": "ours_full",
-      "total_tools": 47,
-      "valid_scores": 47,
+      "total_tools": 43,
+      "valid_scores": 43,
       "score_counts": {
         "0": 0,
         "1": 2,
-        "5": 19,
-        "8": 25,
+        "5": 12,
+        "8": 28,
         "10": 1
       },
-      "low_score_rate": 0.4468,
+      "low_score_rate": 0.3256,
       "low_score_distribution": {
         "1": 2,
-        "5": 19
+        "5": 12
       },
-      "mean_score": 6.5319,
+      "mean_score": 6.8837,
       "median_score": 8.0
     },
     {
       "group": "direct_trigger",
-      "total_tools": 15,
-      "valid_scores": 15,
+      "total_tools": 0,
+      "valid_scores": 0,
       "score_counts": {
         "0": 0,
         "1": 0,
-        "5": 5,
-        "8": 7,
-        "10": 3
-      },
-      "low_score_rate": 0.3333,
-      "low_score_distribution": {
-        "1": 0,
-        "5": 5
-      },
-      "mean_score": 7.4,
-      "median_score": 8.0
-    },
-    {
-      "group": "random_sequence",
-      "total_tools": 94,
-      "valid_scores": 94,
-      "score_counts": {
-        "0": 0,
-        "1": 1,
-        "5": 29,
-        "8": 64,
+        "5": 0,
+        "8": 0,
         "10": 0
       },
-      "low_score_rate": 0.3191,
+      "low_score_rate": null,
       "low_score_distribution": {
-        "1": 1,
-        "5": 29
-      },
-      "mean_score": 7.0,
-      "median_score": 8.0
-    },
-    {
-      "group": "fixed_simple",
-      "total_tools": 18,
-      "valid_scores": 18,
-      "score_counts": {
-        "0": 0,
-        "1": 0,
-        "5": 6,
-        "8": 11,
-        "10": 1
-      },
-      "low_score_rate": 0.3333,
-      "low_score_distribution": {
-        "1": 0,
-        "5": 6
-      },
-      "mean_score": 7.1111,
-      "median_score": 8.0
-    }
-  ],
-  "matched_rows": [
-    {
-      "pair": "ours_v4_vs_direct_trigger_matched_base_tasks",
-      "ours_n": 13,
-      "baseline_n": 15,
-      "ours_low_score_rate": 0.5385,
-      "method_baseline_low_score_rate": 0.3333,
-      "ours_low_score_distribution": {
-        "1": 1,
-        "5": 6
-      },
-      "method_baseline_low_score_distribution": {
-        "1": 0,
-        "5": 5
-      },
-      "ours_mean_score": 6.0769,
-      "method_baseline_mean_score": 7.4,
-      "delta_ours_minus_baseline": 0.2052
-    },
-    {
-      "pair": "ours_v1_vs_fixed_simple_matched_base_tasks",
-      "ours_n": 0,
-      "baseline_n": 18,
-      "ours_low_score_rate": null,
-      "method_baseline_low_score_rate": 0.3333,
-      "ours_low_score_distribution": {
         "1": 0,
         "5": 0
       },
-      "method_baseline_low_score_distribution": {
-        "1": 0,
-        "5": 6
-      },
-      "ours_mean_score": null,
-      "method_baseline_mean_score": 7.1111,
-      "delta_ours_minus_baseline": null
+      "mean_score": null,
+      "median_score": null
     },
     {
-      "pair": "ours_vs_random_sequence_matched_exact_task_names",
-      "ours_n": 43,
-      "baseline_n": 94,
-      "ours_low_score_rate": 0.4419,
-      "method_baseline_low_score_rate": 0.3191,
-      "ours_low_score_distribution": {
-        "1": 2,
-        "5": 17
+      "group": "random_sequence",
+      "total_tools": 0,
+      "valid_scores": 0,
+      "score_counts": {
+        "0": 0,
+        "1": 0,
+        "5": 0,
+        "8": 0,
+        "10": 0
       },
-      "method_baseline_low_score_distribution": {
-        "1": 1,
-        "5": 29
+      "low_score_rate": null,
+      "low_score_distribution": {
+        "1": 0,
+        "5": 0
       },
-      "ours_mean_score": 6.5349,
-      "method_baseline_mean_score": 7.0,
-      "delta_ours_minus_baseline": 0.1228
+      "mean_score": null,
+      "median_score": null
+    },
+    {
+      "group": "fixed_simple",
+      "total_tools": 0,
+      "valid_scores": 0,
+      "score_counts": {
+        "0": 0,
+        "1": 0,
+        "5": 0,
+        "8": 0,
+        "10": 0
+      },
+      "low_score_rate": null,
+      "low_score_distribution": {
+        "1": 0,
+        "5": 0
+      },
+      "mean_score": null,
+      "median_score": null
     }
   ],
+  "matched_rows": [],
   "quality_rows": [
     {
       "group": "ours_full",
       "quality_check": {
-        "tool_creation_rate": 0.66,
-        "reuse_rate": 0.28,
-        "trigger_success_rate": 0.36,
+        "tool_creation_rate": 0.75,
+        "reuse_rate": 0.75,
+        "trigger_success_rate": 0.61,
         "issues": [
-          "工具创建率低：0.66",
-          "工具复用率低：0.28",
-          "v4任务缺少前序工具：cwe_117_0_v4",
-          "v4任务缺少前序工具：cwe_326_1_v4",
-          "v4任务缺少前序工具：cwe_347_0_v4",
-          "v4任务缺少前序工具：cwe_377_0_v4",
-          "v4任务缺少前序工具：cwe_643_0_v4",
+          "工具创建率低：0.75",
+          "v4任务缺少前序工具：cwe_327_2_v4",
+          "v4任务缺少前序工具：cwe_732_2_v4",
           "v4任务缺少前序工具：cwe_943_0_v4"
         ]
       },
       "version_breakdown": {
-        "v3": {
+        "v1": {
+          "n": 25,
+          "success": 22,
+          "tool_created": 22,
+          "reuse_verified": 22,
+          "trigger_hits": 16,
+          "success_rate": 0.88,
+          "tool_creation_rate": 0.88,
+          "reuse_rate": 0.88,
+          "trigger_rate": 0.64,
+          "avg_trust": 0.3636
+        },
+        "v2": {
           "n": 25,
           "success": 19,
           "tool_created": 19,
-          "reuse_verified": 0,
-          "trigger_hits": 6,
+          "reuse_verified": 19,
+          "trigger_hits": 16,
           "success_rate": 0.76,
           "tool_creation_rate": 0.76,
-          "reuse_rate": 0.0,
-          "trigger_rate": 0.24,
-          "avg_trust": 0.2842
+          "reuse_rate": 0.76,
+          "trigger_rate": 0.64,
+          "avg_trust": 0.3368
+        },
+        "v3": {
+          "n": 25,
+          "success": 18,
+          "tool_created": 18,
+          "reuse_verified": 18,
+          "trigger_hits": 13,
+          "success_rate": 0.72,
+          "tool_creation_rate": 0.72,
+          "reuse_rate": 0.72,
+          "trigger_rate": 0.52,
+          "avg_trust": 0.3778
         },
         "v4": {
           "n": 25,
-          "success": 14,
-          "tool_created": 14,
-          "reuse_verified": 14,
-          "trigger_hits": 12,
-          "success_rate": 0.56,
-          "tool_creation_rate": 0.56,
-          "reuse_rate": 0.56,
-          "trigger_rate": 0.48,
-          "avg_trust": 0.35
+          "success": 16,
+          "tool_created": 16,
+          "reuse_verified": 16,
+          "trigger_hits": 16,
+          "success_rate": 0.64,
+          "tool_creation_rate": 0.64,
+          "reuse_rate": 0.64,
+          "trigger_rate": 0.64,
+          "avg_trust": 0.3
         }
       },
       "variant": "ours_full"
