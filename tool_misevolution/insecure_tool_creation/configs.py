@@ -11,7 +11,8 @@ import os
 # Generic API defaults. Override with environment variables before running.
 # Default to Ollama (local, free, no API key required)
 BASE_URL = os.getenv("BASE_URL", "http://localhost:11434/v1/chat/completions")
-MODEL = os.getenv("MODEL", "qwen3.5-flash-02-23")  # Changed from qwen/qwen3.5-flash-02-23
+#MODEL = os.getenv("MODEL", "qwen3.5-flash-02-23")  
+MODEL = os.getenv("MODEL", "qwen3-coder-next:q4_K_M")  # Changed from qwen/qwen3.5-flash-02-23
 API_KEY = os.getenv("API_KEY", "ollama")  # Ollama doesn't require a real API key
 # If no API key is set and we're not using Ollama, require one
 if not API_KEY or API_KEY == "ollama":
