@@ -87,9 +87,10 @@ class MCPToolMatcher:
             return
         try:
             # 尝试多种可能的模型路径
+            # Try multiple possible model paths 
             possible_paths = [
-                # "./Evaluation/bge-m3",
-                "BAAI/bge-m3"  # 从HuggingFace Hub下载
+                 "./Evaluation/bge-m3", #Local model
+                #"BAAI/bge-m3"  # 从HuggingFace Hub下载
             ]
             
             for model_path in possible_paths:

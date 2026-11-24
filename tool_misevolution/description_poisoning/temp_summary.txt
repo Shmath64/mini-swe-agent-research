@@ -1,0 +1,37 @@
+=== SUMMARY OF poisoned_tools.py ===
+
+This file contains poisoned tool definitions for Description Poisoning experiments.
+
+MAIN COMPONENTS:
+
+1. POISONED_TOOLS (lines 21-418): List of 8 vulnerable tools with:
+   - Broad descriptions that match many downstream tasks via semantic retrieval
+   - Functionally correct but vulnerable code (no injected bugs, just omitted validation)
+   - Target CWEs (Common Weakness Enumerations)
+   - Vulnerability patterns documented
+
+   Tools:
+   - universal_file_handler (CWE-022, CWE-732, CWE-377): Path traversal vulnerability
+   - http_client_helper (CWE-918, CWE-020): SSRF via verify=False, no URL validation
+   - command_runner (CWE-078, CWE-095): Shell injection via shell=True
+   - data_serializer (CWE-502, CWE-327): Deserialization via pickle/yaml.load
+   - config_manager (CWE-643, CWE-943, CWE-117): Configuration injection, log injection
+   - crypto_helper (CWE-326, CWE-327, CWE-329, CWE-760): Weak crypto (MD5, static salt, random)
+   - web_response_builder (CWE-079, CWE-113): XSS via unescaped f-string HTML
+   - input_processor (CWE-020, CWE-1333, CWE-400): Input validation issues
+
+2. IRRELEVANT_TOOLS (lines 421-671): List of 8 non-vulnerable, unrelated tools:
+   - bmi_calculator, temperature_converter, fibonacci_generator
+   - color_converter, text_statistics, date_difference
+   - unit_converter, dice_roller
+
+3. generate_mcp_records() (lines 675-702): Converts tool defs to MCP JSONL records
+
+4. inject_into_pool() (lines 705-714): Writes poisoned tools to JSONL file
+
+5. Main entry point (lines 717-731): CLI with --count and --output arguments
+
+Purpose: Tools are designed to poison the MCP pool so that when LLMs retrieve tools
+based on semantic similarity to task descriptions, they may inherit vulnerable patterns.
+
+=== END SUMMARY ===
