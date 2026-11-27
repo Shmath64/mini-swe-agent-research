@@ -1,0 +1,6 @@
+# ignore all downloaded model artifacts
+*
+
+#Retain repository documentation
+!.gitignore
+!README.md
